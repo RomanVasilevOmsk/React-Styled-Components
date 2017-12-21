@@ -12,16 +12,28 @@ const Button = styled.button`
   background: transparent;
   color: palevioletred;
   border: 2px solid palevioletred;
+  
+  // &.primary{
+  //   color: blue;
+  // }
 
   ${props => props.primary && css`
     background: palevioletred;
     color: white;
   `}
 `;
+
+const Title = styled.h1`
+  font-size: 1.5em;
+  color: ${props => props.primary ? 'blue' : 'purple'};
+`;
+
+
      ReactDOM.render(
        <div>
-    <Button>Normal Button</Button>
-    <Button primary>Primary Button</Button>
-  </div>,
+        <Button>Normal Button</Button>
+        <Button primary>Primary Button</Button>
+        <Title primary>Hello World</Title>
+      </div>,
         document.getElementById("app")
     );
